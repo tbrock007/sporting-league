@@ -1,0 +1,134 @@
+/* Header Styling */
+.gallery-header {
+    background: url('http://localhost:4000/uploads/GalleryBanner.jpg') no-repeat center center;
+    background-size: cover;
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-header-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.gallery-header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.gallery-header p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Upload Section */
+.upload-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+.upload-section h2 {
+    font-size: 1.5rem;
+    padding: 30px;
+    color: #343a40;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.upload-input {
+    margin-right: 10px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 60%;
+}
+
+.upload-btn {
+    font-size: 1rem;
+    padding: 5px 15px;
+    font-weight: bold;
+    background-color: #ffc107;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.upload-btn:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
+
+/* Gallery Container */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Media Card */
+.media-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Image */
+.media-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #ffc107;
+}
+
+/* Empty Gallery */
+.empty-gallery {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .gallery-header p {
+        font-size: 1rem;
+    }
+
+    .media-img {
+        height: 150px;
+    }
+
+    .upload-input {
+        width: 100%;
+    }
+}

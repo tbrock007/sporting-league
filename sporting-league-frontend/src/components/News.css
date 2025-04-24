@@ -1,0 +1,76 @@
+/* Header Styling */
+.news-header {
+    background: url('http://localhost:4000/uploads/Basketball.jpg') no-repeat center center;
+    background-size: cover;
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-page {
+    padding-bottom: 60px; /* Add space at the bottom */
+}
+
+.news-header h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.news-header p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Card Styling */
+.news-card {
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.news-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.news-card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.news-card .card-text {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.news-card .card-date {
+    font-size: 0.9rem;
+    color: #adb5bd;
+    margin-bottom: 1rem;
+}
+
+.news-card .btn-warning {
+    color: #000;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .news-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .news-header p {
+        font-size: 1rem;
+    }
+}

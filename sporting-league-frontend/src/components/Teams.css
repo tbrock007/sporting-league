@@ -1,0 +1,130 @@
+/* Header Styling */
+.teams-header {
+    background: url('http://localhost:4000/uploads/Banner.jpg') no-repeat center center;
+    background-size: cover;
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.teams-page {
+    padding-bottom: 60px; 
+}
+
+.teams-header h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.teams-header p {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Team Card Styling */
+.team-card {
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Prevent overflow */
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.team-card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px; /* Add spacing after the logo */
+}
+
+.team-card .card-text {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+/* Button Styling */
+.btn-warning {
+    color: #000; /* Default text color */
+    background-color: #ffc107; /* Default button background */
+    font-weight: bold;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.btn-warning:hover {
+    background-color: #ce9607; /* Change background color on hover */
+    color: #fff !important; /* Ensure text turns white on hover */
+    text-decoration: none; /* Ensure no underline appears */
+}
+
+/* Highlight Styling */
+.highlight-card .team-card {
+    border: 3px solid #ffc107; /* Yellow border for highlighting */
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Team Logo Styling */
+.team-logo-container {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center; /* Center the logo horizontally */
+    align-items: center; /* Center the logo vertically */
+    height: 120px; /* Increased height for flexibility */
+}
+
+.team-logo {
+    max-width: 150px; /* Increased maximum width for larger logos */
+    max-height: 100px; /* Ensure it fits within the container */
+    object-fit: contain; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add a slight shadow for visual enhancement */
+}
+
+/* Section Headers */
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #343a40;
+    border-bottom: 2px solid #ffc107;
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .teams-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .teams-header p {
+        font-size: 1rem;
+    }
+
+    .team-logo-container {
+        height: 100px; /* Reduce container height for smaller screens */
+    }
+
+    .team-logo {
+        max-width: 80px; /* Adjust maximum width for smaller screens */
+        max-height: 80px;
+    }
+}

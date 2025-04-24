@@ -1,0 +1,88 @@
+/* Header Styling */
+.players-header {
+    background: url('http://localhost:4000/uploads/Playersbanner.jpg') no-repeat center center;
+    background-size: cover;
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.players-page {
+    padding-bottom: 60px; /* Add space at the bottom */
+}
+
+.players-header h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.players-header p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Player Card Styling */
+.player-card {
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.player-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.player-card .player-img {
+    border-radius: 15px 15px 0 0;
+    height: 295px;
+    object-fit: cover;
+}
+
+.player-card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.player-card .card-text {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+/* Highlight Styling */
+.highlight-card .player-card {
+    border: 3px solid #ffc107;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .players-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .players-header p {
+        font-size: 1rem;
+    }
+
+    .player-card .player-img {
+        height: 200px;
+    }
+}

@@ -1,0 +1,57 @@
+/* Navbar Styling */
+.navbar {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #f8f9fa !important;
+    transition: transform 0.2s ease-in-out;
+}
+
+.navbar-logo {
+    height: 40px; /* Adjust this height as needed */
+    width: auto; /* Automatically scale width to maintain aspect ratio */
+    object-fit: contain; /* Ensures the image doesn't get distorted */
+    margin-right: 10px; /* Optional: Adds some spacing to the right */
+}
+
+.navbar-brand:hover {
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f8f9fa !important;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important; /* Highlight color */
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 2px;
+}
+
+/* Add shadow for hover effect */
+.nav-item:hover {
+    border-bottom: 2px solid #ffc107;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+    }
+}

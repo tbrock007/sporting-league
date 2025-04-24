@@ -1,0 +1,68 @@
+/* Header Styling */
+.statistics-header {
+    background: url('http://localhost:4000/uploads/Matchesbanner.jpg') no-repeat center center;
+    background-size: cover;
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.statistics-page {
+    padding-bottom: 60px; /* Add space at the bottom */
+}
+
+.statistics-header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.statistics-header p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* Table Styling */
+.table {
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.table thead th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(255, 193, 7, 0.2); /* Highlight with yellow */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.05); /* Light stripe for alternating rows */
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Heading Styling */
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .statistics-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .statistics-header p {
+        font-size: 1rem;
+    }
+}
