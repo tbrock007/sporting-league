@@ -1,0 +1,112 @@
+--Teams Table
+
+CREATE TABLE Teams (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    league_id INT,
+    city VARCHAR(100),
+    logo VARCHAR(255),
+    FOREIGN KEY (league_id) REFERENCES Leagues(id) ON DELETE CASCADE
+);
+
+-- Sample data
+INSERT INTO Teams (name, league_id, city, logo)
+VALUES
+('Los Angeles Lakers', 1, 'Los Angeles', '/uploads/lakers_logo.jpg'),
+('Golden State Warriors', 1, 'San Francisco', '/uploads/warriors_logo.jpg'),
+('Duke Blue Devils', 2, 'Durham', '/uploads/duke_logo.jpg'),
+('Kansas Jayhawks', 2, 'Lawrence', '/uploads/kansas_logo.jpg'),
+('Fenerbahçe', 3, 'Istanbul', '/uploads/fenerbahce_logo.jpg');
+
+--Leagues Table
+
+CREATE TABLE Leagues (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    logo VARCHAR(255)
+);
+
+-- Sample data
+INSERT INTO Leagues (name, description, logo)
+VALUES
+('NBA', 'National Basketball Association', '/uploads/nba_logo.jpg'),
+('NCAA', 'National Collegiate Athletic Association', '/uploads/ncaa_logo.jpg');
+
+--Players Table
+
+CREATE TABLE Players (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    team_id INT,
+    age INT,
+    height VARCHAR(50),
+    photo VARCHAR(255),
+    FOREIGN KEY (team_id) REFERENCES Teams(id) ON DELETE CASCADE
+);
+
+-- Sample data
+INSERT INTO Players (name, team_id, age, height, photo)
+VALUES
+('LeBron James', 1, 38, '6\'9"','/uploads/lebron.jpg'),
+('Stephen Curry', 2, 35, '6\'2"', '/uploads/curry.jpg'),
+('Kyle Filipowski', 3, 20, '7\'0"','/uploads/kyle.jpg'),
+('Jalen Wilson', 4, 22, '6\'8"','/uploads/jalen.jpg'),
+('Marko Guduric', 5, 28, '6\'6"','/uploads/guduric.jpg');
+
+--Statistics Table
+
+CREATE TABLE Statistics (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    player_id INT,
+    points_per_game DECIMAL(5, 2),
+    assists_per_game DECIMAL(5, 2),
+    rebounds_per_game DECIMAL(5, 2),
+    FOREIGN KEY (player_id) REFERENCES Players(id) ON DELETE CASCADE
+);
+
+-- Sample data
+INSERT INTO Statistics (player_id, points_per_game, assists_per_game, rebounds_per_game)
+VALUES
+(1, 27.0, 7.4, 7.5),
+(2, 30.1, 6.2, 5.5),
+(3, 15.3, 2.1, 7.8),
+(4, 18.7, 3.4, 6.5),
+(5, 12.5, 4.3, 4.0);
+
+CREATE TABLE News (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    date_posted DATETIME DEFAULT CURRENT_TIMESTAMP,
+    image VARCHAR(255)
+);
+
+-- Sample data
+INSERT INTO News (title, content, image)
+VALUES
+('NBA Finals Recap', 'The NBA Finals concluded with an epic Game 7 showdown...', '/uploads/nba_finals.jpg'),
+('Duke Blue Devils Win Championship', 'Duke claims victory in the NCAA tournament...', '/uploads/duke_championship.jpg'),
+('EuroLeague Season Preview', 'A look ahead to the EuroLeague season...', '/uploads/euroleague_preview.jpg');
+
+
+CREATE TABLE Matches (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    home_team_id INT,
+    away_team_id INT,
+    league_id INT,
+    date DATETIME,
+    venue VARCHAR(255),
+    home_team_score INT,
+    away_team_score INT,
+    FOREIGN KEY (home_team_id) REFERENCES Teams(id) ON DELETE CASCADE,
+    FOREIGN KEY (away_team_id) REFERENCES Teams(id) ON DELETE CASCADE,
+    FOREIGN KEY (league_id) REFERENCES Leagues(id) ON DELETE CASCADE
+);
+
+-- Sample data
+INSERT INTO Matches (home_team_id, away_team_id, league_id, date, venue, home_team_score, away_team_score)
+VALUES
+(1, 2, 1, '2024-12-15 7:00 pm', 'Crypto.com Arena', 112, 108),
+(3, 4, 2, '2024-12-10 2:00 pm', 'Cameron Indoor Stadium', 75, 68),
+(5, 1, 3, '2024-12-20 6:00 pm', 'Ülker Sports Arena', NULL, NULL);
